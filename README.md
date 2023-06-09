@@ -123,10 +123,12 @@ When deploying the application, the following environment variables can be set:
 | \<PROVIDER\>\_CLIENT_ID     |                         | Provider OAuth Client ID                                                                                                 |
 | \<PROVIDER\>\_CLIENT_SECRET |                         | Provider OAuth Client Secret                                                                                             |
 | \<PROVIDER\>\_ISSUER        |                         | Provider Issuer URL                                                                                                      |
+| AZUREAD_TENANT_ID           |                         | Azure AD Tenant Identifier when using Azure AD                                                                           |
 
 Where \<PROVIDER\> is one of the following:
 
 - APPLE
+- AZUREAD
 - AUTH0
 - COGNITO
 - DISCORD

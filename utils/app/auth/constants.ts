@@ -16,6 +16,15 @@ export const APPLE_CLIENT_ID =
 export const APPLE_CLIENT_SECRET =
   dockerEnvVarFix(process.env.APPLE_CLIENT_SECRET) || '';
 
+export const AZUREAD_CLIENT_ID =
+  dockerEnvVarFix(process.env.AZUREAD_CLIENT_ID) || '';
+
+export const AZUREAD_CLIENT_SECRET =
+  dockerEnvVarFix(process.env.AZUREAD_CLIENT_SECRET) || '';
+
+export const AZUREAD_TENANT_ID =
+  dockerEnvVarFix(process.env.AZUREAD_TENANT_ID) || '';
+
 export const AUTH0_CLIENT_ID =
   dockerEnvVarFix(process.env.AUTH0_CLIENT_ID) || '';
 

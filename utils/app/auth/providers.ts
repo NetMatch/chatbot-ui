@@ -1,6 +1,9 @@
 import {
   APPLE_CLIENT_ID,
   APPLE_CLIENT_SECRET,
+  AZUREAD_CLIENT_ID,
+  AZUREAD_CLIENT_SECRET,
+  AZUREAD_TENANT_ID,
   AUTH0_CLIENT_ID,
   AUTH0_CLIENT_SECRET,
   AUTH0_ISSUER,
@@ -49,6 +52,19 @@ export async function getProviders() {
       AppleProvider({
         clientId: APPLE_CLIENT_ID!,
         clientSecret: APPLE_CLIENT_SECRET!,
+        authorization: authorization,
+        allowDangerousEmailAccountLinking: true,
+      }),
+    );
+  }
+  if (AZUREAD_CLIENT_ID) {
+    const provider = await import('next-auth/providers/azure-ad');
+    const AzureADProvider = provider.default;
+    providers.push(
+      AzureADProvider({
+        clientId: AZUREAD_CLIENT_ID!,
+        clientSecret: AZUREAD_CLIENT_SECRET!,
+        tenantId: AZUREAD_TENANT_ID,
         authorization: authorization,
         allowDangerousEmailAccountLinking: true,
       }),
