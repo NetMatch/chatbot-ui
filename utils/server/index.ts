@@ -2,6 +2,7 @@ import { OpenAIModel } from '@/types/openai';
 import { Message } from '@chatbot-ui/core/types/chat';
 
 import {
+  AZURE_DEPLOYMENT_ID,
   OPENAI_API_HOST,
   OPENAI_API_TYPE,
   OPENAI_API_VERSION,
@@ -38,7 +39,7 @@ export const OpenAIStream = async (
 ) => {
   let url = `${OPENAI_API_HOST}/v1/chat/completions`;
   if (OPENAI_API_TYPE === 'azure') {
-    url = `${OPENAI_API_HOST}/openai/deployments/${model.id}/chat/completions?api-version=${OPENAI_API_VERSION}`;
+    url = `${OPENAI_API_HOST}/openai/deployments/${AZURE_DEPLOYMENT_ID}/chat/completions?api-version=${OPENAI_API_VERSION}`;
   }
   const res = await fetch(url, {
     headers: {
